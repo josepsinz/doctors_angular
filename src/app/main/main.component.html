@@ -1,0 +1,26 @@
+<div>
+    <p class="mat-h2">DOCTORS LIST</p>
+
+    <mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="doctorId">
+            <mat-header-cell *matHeaderCellDef> Doctor Id. </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.DoctorId}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.Name}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="surname">
+            <mat-header-cell *matHeaderCellDef> Surname </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.Surname}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="speciality">
+            <mat-header-cell *matHeaderCellDef> Speciality </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.Speciality}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+        <mat-row *matRowDef="let row; columns: displayedColumns" (click)="onRowClicked(row)"></mat-row>
+    </mat-table>
+</div>
